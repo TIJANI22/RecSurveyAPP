@@ -113,9 +113,7 @@ main{
     border: 1px solid green;
 }
 
-
-
-.item2{
+.app-container{
     width: 40vw;
     height: 100vh;
     margin: 10px;
@@ -125,67 +123,60 @@ main{
     border: 2px solid green;
 }
 
-.text-input{
-    padding: 0.7rem 1rem;
-    display: block;
-    width: 90%;
-    margin: 20PX;
-    border-radius: 50px;
-    outline: none;
-    color: #444;
-    line-height: 1.5rem;
-    font-size: 1.5rem;
-    font-family: 'Times New Roman', Times, serif;
-}
+ 
+  .app-container h1 {
+    padding: 20px;
+    font-size: 30px;
+  }
 
-.region-name a {
-    color: black;
-    text-decoration: none;
-}
-
-.region-name a:hover{
-    padding: 3px;
-    background-color: yellowgreen;
-    transform: scale(1.0);
-    transition: all 200ms ease-in-out;
-}
-
-.region-name{
-    margin: 10px;
-    padding: 5px;
-}
-
-
-.region-name a{
-    display: block;
-    border-bottom: 1px solid black;
-    
-}
-
-
-
-table{
-    height: 80vh;
-    width: 95%;
-    box-shadow: 1px 12px 12px -6px rgba (0,0,0,0.5);
-}
-
-
-table, td, th{
-    padding: 5px;
-    border: 1px solid black;
+  table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    text-align: center;
-    font-size: 25px;
+    height: 80vh;
+    width: 99%;
+    box-shadow: 1px 12px 12px -6px rgba (0,0,0,0.5);
+    background-color: rgb(231, 245, 253);
+    margin-left: 5px;
+    border-radius: 5px;
+  }
+
+  table td, table th {
+    padding: 8px;
+    font-size: 20px;
+    padding-right: 25px;
+  }
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;   
+     color: black;
+     font-size: 20px;
+  }
+
+  th:hover{
+    background-color: rgb(4, 48, 63);
+    color: white;
+    transition: all 300ms ease-in-out;
 }
 
-th{
-    text-align: center;
-    font-size: 25px;
+td:hover{
+    background-color: rgb(4, 163, 57);
+    color: black;
+    transform: scale(1);
+    transition: all 300ms ease-in-out;    
 }
 
-
-
+  
+  input {
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    width: 30vw;
+    margin-bottom: 25px;
+    outline: none;
+    box-sizing: 5px solid red;
+  }
 
 .footer{
     font-size: 18px;
@@ -231,6 +222,7 @@ th{
         transition: all 0.5s ease-in-out;   
     }
     
+
 .nav-item{
     margin: 10px;
 }
@@ -259,34 +251,72 @@ th{
         border-radius: 10px;
     }
     
-
-    .item2{
+  
+    .app-container{
         width: 90vw;
         height: 100vh;
         margin: 10px;
         text-align: center;
         border-radius: 10px;
         overflow: scroll;
+        border: 2px solid green;
     }
     
+       
+    .app-container h1 {
+        padding: 5px;
+        font-size: 25px;
+      }
 
-    table{
-        height: 90vh;
+
+      table{
+        height: 80vh;
         width: 95%;
         box-shadow: 1px 12px 12px -6px rgba (0,0,0,0.5);
+        margin-left: 10px;
+        border-radius: 5px;
     }
-    table, td, th{
-        font-size: 24px;
-        text-align: center;
-        margin: 5px;
-        padding: 2px;}
-    
-    th{
-    font-size: 24px;
-    width: 100%;
-    }
-        
 
+
+    table td, table th {
+        padding: 10px;
+        font-size: 20px;
+        text-align: center; 
+      }
+      
+    table th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;   
+        color: black;
+         font-size: 20px;
+      }
+      
+     
+      th:hover{
+        background-color: rgb(4, 48, 63);
+        color: white;
+        transition: all 300ms ease-in-out;
+    }
+    
+    td:hover{
+        background-color: rgb(4, 163, 57);
+        color: black;
+        transform: scale(1);
+        transition: all 300ms ease-in-out;    
+    }
+    
+    input {
+        font-size: 10px;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        width: 70vw;
+        margin-bottom: 15px;
+        outline: none;
+        box-sizing: 5px solid red;
+      }
+    
 .footer{
     font-size: 18px;
     width: 100%;}
