@@ -216,7 +216,7 @@ main{
     .item1{
         width: 90vw;
         height: 100vh;
-        margin-top: 55px;
+        margin-top: 0px;
         text-align: center;
         border-radius: 10px;
     }
