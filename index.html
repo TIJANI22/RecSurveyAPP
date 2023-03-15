@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--from fontawesome-->
+   <script src="https://kit.fontawesome.com/1585dc4e54.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>index</title>
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class= "nav-branding" ><span class="red">Beacon</span><span class="gold">Sur</span><span class="green">vey</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    
+</body>
+<script src="index.js"></script>
+<main>
+    
+    <div class="flex-container">
+        <div class="item1", id='map'>
+    <script>
+            function initMap(){
+                var options = {
+                    zoom:7.45, 
+                    center: {lat:7.994775, lng:-1.109184}
+                }
+                var map = new 
+                google.maps.Map(document.getElementById('map'), options);
+
+                //CORS COORDINATES
+                //SGV.CORS/2020/1
+                addMarker({coords:{lat:6.6092600,lng:0.4603820},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGV.CORS/2020/1</h3>"}); 
+
+                //SGE.CORS/2020/2
+                 addMarker({coords:{lat:6.1092690,lng:-0.3023180},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGE.CORS/2020/2</h3>"}); 
+
+                 //SGUE.BOL/CORS/2020/1
+                 addMarker({coords:{lat:10.7969210,lng:-0.8570590},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGUE.BOL/CORS/1</h3>"});
+
+                 //TAML/CORS
+                 addMarker({coords:{lat:9.4040610,lng:-0.8334610},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>TAML.CORS</h3>"});
+
+                 //SGA.CORS/2020/3
+                 addMarker({coords:{lat:6.6879510,lng:-1.6252260},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGA.CORS/2020/3</h3>"});
+               
+                //SGE.CORS/2020/4
+                addMarker({coords:{lat:5.9262010,lng:-0.9863890},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGE.CORS/2020/4</h3>"});
+
+                //SGW.CORS/2020/5
+                addMarker({coords:{lat:4.9254640,lng:-1.7740620},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGE.CORS/2020/5</h3>"});
+
+                //SGW.CORS/2020/6
+                addMarker({coords:{lat:5.2976810,lng:-2.0000410},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGE.CORS/2020/6</h3>"});
+
+                //SGW.CORS/2020/7
+                addMarker({coords:{lat:5.3606000,lng:-0.6331920},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGE.CORS/2020/7</h3>"});
+
+                 //SGW.CORS/2020/7
+                 addMarker({coords:{lat:5.6336920,lng:-0.0876410},iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',content:"<h3>SGGA.A0400/2019</h3>"});
+
+                 //GCP COORDINATES
+            //addMarker({coords:{lat:5.1128910,lng:-1.2434330},
+           //content:"<h3>SGC E443/11/3</h3>"});
+
+                //ADD BEACH MARKER
+                function addMarker(props){
+                    var marker = new google.maps.Marker({
+                position:props.coords,
+                map:map,  
+                /*icon:props.iconImage */          
+            });   
+
+            //check customicon
+            if (props.iconImage){
+                //sett icon image
+                marker.setIcon(props.iconImage);
+            }
+            //CONTENT INFO
+            if (props.content){
+                var infoWindow = new google.maps.InfoWindow({
+                    content: props.content 
+                });
+
+                marker.addListener('click', function(){
+                 infoWindow.open(map, marker);   
+                });    
+            }
+
+            }
+                 
+            }                  
+            </script>
+
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3OMofyoQBZ-o4sXmRyFH625VH-8d6Zhs&callback=initMap"> 
+</script> 
+    </div>
+        
+        <div class="item2">
+            <!--<div class="section search">   
+                 <input type="text" id="filterInput" class="text-input" placeholder="search regions..">  
+             </div>--> 
+     
+             <input type="text" id="filterInput" class="text-input" placeholder="Search Region.......">
+     
+             <ul id ="names" class="collection with-header">
+                
+                 <li class="region-name">
+                     <h3><a href="cors.html">CORS</a></h3>
+                 </li>
+
+                 <li class="region-name">
+                    <h3><a href="savannah_region.html">SAVANNAH</a></h3>
+                </li>
+     
+                 <li class="region-name">
+                     <h3><a href="central.html">CENTRAL</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">GREATER ACCRA</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">WESTERN</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">WESTERN NORTH</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">EASTERN</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">ASHANTI</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">VOLTA</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">OTI</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">AHAFO</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">BONO</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">BONO EAST</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">NORTHERN</a></h3>
+                 </li>
+    
+                 <li class="region-name">
+                     <h3><a href="#">NORTH EAST</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">UPPER EAST</a></h3>
+                 </li>
+     
+                 <li class="region-name">
+                     <h3><a href="#">UPPER WEST</a></h3>
+                 </li>
+             </ul>
+         </div>
+     
+         <script>
+             let filterInput = document.getElementById('filterInput');
+                filterInput.addEventListener('keyup', filterNames);
+     
+                 function filterNames(){
+                 
+                 let filterValue = document.getElementById('filterInput').value.toUpperCase();
+                 
+                 let ul = document.getElementById('names');
+                 let li = ul.querySelectorAll('li.region-name');
+                 //loop through the names-regions list
+                 for(let i = 0;i <li.length;i++){
+                     let a = li[i].getElementsByTagName('a')[0];
+                     //if matched
+                 if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+                     li[i].style.display = '';}
+                     else{
+                         li[i].style.display = 'none';
+                     }
+                 }
+                 }
+         </script> 
+     </main>
+     
+     <footer>
+         <div class="footer">
+             <h2>
+                 <span class="red">Beacon</span><span class="gold">Sur</span><span class="green">vey</span> <i>copyright &copy; <script>document.write(new Date().getFullYear())</script></i>
+             </h2> 
+         </div>
+         
+     </footer>
+     </html>
+     
