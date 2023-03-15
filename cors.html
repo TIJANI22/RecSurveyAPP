@@ -41,7 +41,7 @@
     <script>
             function initMap(){
                 var options = {
-                    zoom:7.45, 
+                    zoom:7.0, 
                     center: {lat:7.994775, lng:-1.109184}
                 }
                 var map = new 
@@ -113,21 +113,26 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3OMofyoQBZ-o4sXmRyFH625V
 </script>  
     </div>
         
-    <div class="item2">
+    <!--<div class="item2">
         <div class="section search">
             
             <form action="index.html" method="post">
        <input type="text" name="search-term" class="text-input" placeholder="Search (Enter Beacon ID)......">
             </form>
-        <div class="section-Regions">
-            <ul>        
-                <table>
+        <div class="section-Regions"> -->
+            <div class="app-container">
+                <h1>Search (Enter Beacon ID)</h1>
+                <div id="portexe-search-root"></div>
+                <div id="portexe-table-container">
+                <table id="portexe-data-table">
+                <thead>
                     <tr>
                       <th>Beacon ID</th>
                       <th>Northing(X)</th>
                       <th>Easting(Y)</th>
                   </tr>
-              
+                </thead>
+            <tbody>
               <tr>
                       <th colspan="3">HO</th>
                   </tr>
@@ -217,7 +222,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3OMofyoQBZ-o4sXmRyFH625V
                   <td>1033251.402</td>
               </tr>
               </tr>
-              </table> 
+            </tbody> 
         </div>    
 
      
@@ -244,7 +249,64 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3OMofyoQBZ-o4sXmRyFH625V
                  }
          </script> 
      </main>
-     
+     <script>
+        const tableData = () => {
+        const searchData = [];
+        const tableEl = document.getElementById('portexe-data-table');
+        Array.from(tableEl.children[1].children).forEach(_bodyRowEl => {
+            searchData.push(Array.from(_bodyRowEl.children).map(_cellEl => {
+                    return _cellEl.innerHTML;
+                }));
+            });
+            return searchData;
+        }
+        
+    const createSearchInputElement = () => {
+        const el = document.createElement('input');
+        el.classList.add('portexe-search-input');
+        el.id = 'portexe-search-input'; 
+        return el;
+    }
+    
+    const search =(arr, searchTerm) => {
+        if(!searchTerm) return arr;
+        return arr.filter(_row => {
+            return _row.find(_item => _item.toLowerCase().includes(searchTerm.toLowerCase()));
+        });
+    }
+    
+    const refreshTable = (data) =>{
+        const tableBody = document.getElementById('portexe-data-table').children[1];
+        tableBody.innerHTML = ''; 
+        
+        data.forEach(_row => {
+            const curRow = document.createElement('tr');
+            _row.forEach(_dataItem => {
+            const curCell = document.createElement('td');
+            curCell.innerText = _dataItem;
+            curRow.appendChild(curCell);
+            });
+            tableBody.appendChild(curRow);
+            });
+            }
+                
+    const init = () =>{
+    document.getElementById('portexe-search-root')
+    .appendChild(createSearchInputElement());
+    
+    
+    const initialTableData = tableData();
+    
+    
+    const searchInput = document.getElementById('portexe-search-input');
+        searchInput.addEventListener('keyup', (e) => {
+        refreshTable(search(initialTableData, e.target.value));
+        });
+    }
+    init();
+    
+    </script>
+    
      <footer>
          <div class="footer">
              <h2>
