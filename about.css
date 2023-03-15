@@ -198,6 +198,7 @@ main{
     left: 0;}
 
     main{
+        margin-top:70px;
         width: 100vw;
         min-height: 100vh;
      }
