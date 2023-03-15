@@ -116,7 +116,7 @@ main{
 }
 
 .post .post-image{
-    padding-top: 50px;
+    padding-top: 0px;
     width: 50vw;
     height: 100vh;
     padding: 30px;
